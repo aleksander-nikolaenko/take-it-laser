@@ -423,7 +423,7 @@ body .accent-text {
 }
 
 .modal {
-  padding: 40px;
+  padding: 20px;
   width: 80%;
   max-width: 400px;
   min-height: 320px;
@@ -434,9 +434,33 @@ body .accent-text {
   transform: scale(1) translateY(0);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(50, 50, 50, 0.7) url("../img/loader.gif") center / 50px
+    no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal.sending::after {
+  opacity: 1;
+  visibility: visible;
+}
 @media screen and (max-height: 600px) {
   .modal {
     top: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 40px;
+    max-width: 600px;
   }
 }
 
@@ -500,20 +524,25 @@ body .accent-text {
   align-items: center;
   width: 100%;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
   height: 32px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   color: rgba(117, 117, 117, 0.45);
   background: transparent;
-  padding-left: 42px;
+  padding-left: 36px;
   padding-right: 12px;
   padding-top: 1px;
   padding-bottom: 1px;
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .modal-select-title {
+    font-size: 16px;
+  }
 }
 .modal-select-title[data-state="selected"] {
   color: var(--text-color);
@@ -557,9 +586,9 @@ body .accent-text {
   opacity: 0;
   z-index: 1;
 }
-.modal-select-input {
+/* .modal-select-input {
   display: none;
-}
+} */
 .modal-select-input:checked + label {
   background-color: #dedede;
 }
@@ -574,13 +603,18 @@ body .accent-text {
   height: 40px;
   max-height: 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
   color: var(--text-color);
   padding: 0 16px;
   transition: all 0.2s ease-out;
   cursor: pointer;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .modal-select-label {
+    font-size: 16px;
+  }
 }
 .modal-select-label + input + .modal-select-label {
   border-top: 0 solid #c7ccd1 60;
@@ -596,8 +630,13 @@ body .accent-text {
   color: var(--accent-color);
   text-align: center;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
+}
+@media screen and (min-width: 768px) {
+  .modal-select-address {
+    font-size: 16px;
+  }
 }
 
 .modal-form-field + .modal-form-field {
@@ -623,21 +662,31 @@ body .accent-text {
   height: 32px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
   border-radius: 4px;
   color: var(--text-color);
   background: transparent;
-  padding-left: 42px;
+  padding-left: 32px;
   padding-right: 12px;
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media screen and (min-width: 768px) {
+  .modal-form-input {
+    font-size: 16px;
+  }
+}
 .modal-form-input::placeholder {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
   color: rgba(117, 117, 117, 0.45);
+}
+@media screen and (min-width: 768px) {
+  .modal-form-input::placeholder {
+    font-size: 16px;
+  }
 }
 .modal-form-input:focus {
   border-color: var(--accent-color);
@@ -645,7 +694,7 @@ body .accent-text {
 
 .modal-form-input-icon {
   position: absolute;
-  left: 12px;
+  left: 8px;
   top: 50%;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -662,7 +711,7 @@ body .accent-text {
   padding-right: 16px;
   width: 100%;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
   height: 120px;
   border-radius: 4px;
@@ -673,11 +722,21 @@ body .accent-text {
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media screen and (min-width: 768px) {
+  .modal-form-text-input {
+    font-size: 16px;
+  }
+}
 .modal-form-text-input::placeholder {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.15;
   color: rgba(117, 117, 117, 0.45);
+}
+@media screen and (min-width: 768px) {
+  .modal-form-text-input::placeholder {
+    font-size: 16px;
+  }
 }
 .modal-form-text-input:focus {
   border-color: var(--accent-color);
@@ -687,16 +746,22 @@ body .accent-text {
   margin-top: 10px;
   margin-bottom: 15px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.15;
   color: var(--text-color);
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 1;
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .modal-form-check-text {
+    font-size: 16px;
+  }
+}
+
 .modal-form-icon-place {
   width: 16px;
   height: 16px;
