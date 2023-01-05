@@ -790,3 +790,39 @@ body .accent-text {
 .modal-form-btn:hover {
   color: var(--text-color);
 }
+
+#to-top {
+  position: fixed;
+  display: inline-block;
+  /* width: 40px;
+  height: 40px; */
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+  #to-top {
+    bottom: 40px;
+    left: 40px;
+  }
+}
+
+#to-top > img {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (min-width: 768px) {
+  #to-top > img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+#to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
