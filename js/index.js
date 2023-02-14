@@ -5,8 +5,8 @@ import { modal } from "./modal.js";
 const swiper = new Swiper(".slider", {
   // Optional parameters
   loop: true,
-  slidesPerView: 1,
-  spaceBetween: 40,
+  slidesPerView: "auto",
+  centeredSlides: true,
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",

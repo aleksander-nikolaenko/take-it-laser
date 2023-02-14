@@ -7,7 +7,7 @@
   --secondary-text-color: #ececec;
 
   --mobile-menu-background-color: #8ab226;
-  --slider-background-color: #dddddd;
+  --slider-background-color: #ffffff;
 
   --primary-background-color: #ffffff;
   --secondary-background-color: #525252;
@@ -369,7 +369,8 @@ body .accent-text {
 }
 
 .swiper-slide {
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
   height: 60px;
   text-align: center;
   font-size: 18px;
@@ -378,7 +379,12 @@ body .accent-text {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid var(--secondary-background-color);
   border-radius: 40px;
+  opacity: 0;
+}
+.swiper-slide-active {
+  opacity: 1;
 }
 
 .swiper-pagination-bullet {

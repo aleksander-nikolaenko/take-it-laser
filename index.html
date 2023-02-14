@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="take-it-laser - лазерна епіляція нового покоління, якісне видалення волосся за допомогою лазера"
+    />
+
     <title>Лазерна епіляція у Take it Laser</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,19 +34,27 @@
     <header class="header">
       <div class="container">
         <div class="header-block">
-          <button type="button" class="menu-open-btn">
+          <button type="button" class="menu-open-btn" aria-label="menu open">
             <svg class="menu-btn-icon">
               <use href="./img/icons-sprite.svg#icon-header-menu-open"></use>
             </svg>
           </button>
 
-          <button type="button" class="menu-close-btn visually-hidden">
+          <button
+            type="button"
+            class="menu-close-btn visually-hidden"
+            aria-label="menu close"
+          >
             <svg class="menu-btn-icon">
               <use href="./img/icons-sprite.svg#icon-header-menu-close"></use>
             </svg>
           </button>
 
-          <a class="header-logo logo link" href="./index.html">
+          <a
+            class="header-logo logo link"
+            href="./index.html"
+            aria-label="logo"
+          >
             <svg class="icon">
               <use href="./img/icons-sprite.svg#icon-header-logo"></use>
             </svg>
@@ -250,7 +263,7 @@
           </p>
         </div>
       </section>
-      <a id="to-top" href="#"
+      <a id="to-top" href="#" aria-label="Arrow to top"
         ><img
           src="./img/arrow.svg"
           alt="Arrow to top"
